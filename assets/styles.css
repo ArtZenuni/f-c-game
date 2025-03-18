@@ -1,12 +1,13 @@
 body {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #1a1a1a;
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    gap: 30px;
 }
 
 .game-container {
@@ -32,6 +33,7 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
     text-align: center;
+    width: 250px;
     border-radius: 10px;
 }
 
@@ -64,3 +66,9 @@ body {
 .controls li {
     margin: 5px 0;
 } 
+
+@media(max-width: 700px){
+    .controls {
+        display: none;
+    }
+}
