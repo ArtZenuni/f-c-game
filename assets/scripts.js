@@ -18,14 +18,12 @@ let lastTime = 0;
 
 const PIECES = [
     {
-        // I piece
         shape: [
             [1, 1, 1, 1]
         ],
         color: '#00f0f0'
     },
     {
-        // L piece
         shape: [
             [1, 0],
             [1, 0],
@@ -34,7 +32,6 @@ const PIECES = [
         color: '#f0a000'
     },
     {
-        // J piece
         shape: [
             [0, 1],
             [0, 1],
@@ -43,7 +40,6 @@ const PIECES = [
         color: '#0000f0'
     },
     {
-        // O piece
         shape: [
             [1, 1],
             [1, 1]
@@ -51,7 +47,6 @@ const PIECES = [
         color: '#f0f000'
     },
     {
-        // T piece
         shape: [
             [0, 1, 0],
             [1, 1, 1]
@@ -140,7 +135,6 @@ function draw() {
     ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    // Draw the grid
     for (let y = 0; y < GRID_HEIGHT; y++) {
         for (let x = 0; x < GRID_WIDTH; x++) {
             if (grid[y][x]) {
@@ -150,7 +144,6 @@ function draw() {
         }
     }
     
-    // Draw current piece
     if (currentPiece) {
         ctx.fillStyle = currentPiece.color;
         for (let y = 0; y < currentPiece.shape.length; y++) {
@@ -211,15 +204,15 @@ document.addEventListener('keydown', event => {
     if (gameOver) return;
     
     switch (event.keyCode) {
-        case 37: // Left arrow
+        case 37:
             currentPiece.x--;
             if (collide()) currentPiece.x++;
             break;
-        case 39: // Right arrow
+        case 39:
             currentPiece.x++;
             if (collide()) currentPiece.x--;
             break;
-        case 40: // Down arrow
+        case 40: 
             currentPiece.y++;
             if (collide()) {
                 currentPiece.y--;
@@ -234,10 +227,10 @@ document.addEventListener('keydown', event => {
             }
             dropCounter = 0;
             break;
-        case 38: // Up arrow
+        case 38:
             rotate();
             break;
-        case 32: // Space
+        case 32:
             while (!collide()) {
                 currentPiece.y++;
             }
@@ -254,6 +247,6 @@ document.addEventListener('keydown', event => {
     }
 });
 
-// Start the game
+
 currentPiece = createPiece();
 update(); 
