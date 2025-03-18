@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Duel</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Duel</h1>
+        <div class="game-info">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="timer">Time: <span id="timer">60</span>s</div>
+            <div class="level">Level: <span id="level">1</span></div>
+        </div>
+        
+        <div class="word-display" id="wordDisplay">Start typing...</div>
+        <input type="text" id="wordInput" placeholder="Type here..." autocomplete="off">
+        
+        <div class="controls">
+            <button id="startButton">Start Game</button>
+            <button id="resetButton" disabled>Reset</button>
+        </div>
+    </div>
+    <script src="assets/scripts.js"></script>
+</body>
+</html>
